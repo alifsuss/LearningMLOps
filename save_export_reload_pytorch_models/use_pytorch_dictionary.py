@@ -7,17 +7,17 @@ Original file is located at
     https://colab.research.google.com/drive/15KAar9LegZwA7JmB_83ORR8UK-UwDzx3
 """
 
-!ls
+#!ls
 
-!wget https://github.com/futurexskill/ml-model-deployment/raw/main/customer_buy_state_dict_v1.zip
+#!wget https://github.com/futurexskill/ml-model-deployment/raw/main/customer_buy_state_dict_v1.zip
 
-!ls
+#!ls
 
-!unzip customer_buy_state_dict_v1.zip
+#!unzip customer_buy_state_dict_v1.zip
 
-!ls
+#!ls
 
-!wget https://github.com/futurexskill/ml-model-deployment/raw/main/sc.pickle
+#!wget https://github.com/futurexskill/ml-model-deployment/raw/main/sc.pickle
 
 import pickle
 
@@ -53,5 +53,5 @@ new_predictor2.load_state_dict(torch.load('customer_buy_state_dict'))
 import numpy as np
 
 y_cust_42_50000 = new_predictor2(torch.from_numpy(local_scaler.transform(np.array([[40,20000]]))).float())
-y_cust_42_50000
+print(y_cust_42_50000)
 
