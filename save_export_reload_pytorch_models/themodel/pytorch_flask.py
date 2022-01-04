@@ -44,10 +44,10 @@ def hello_world():
     print(age)
     print(salary)
     
-    prediction = new_predictor2(torch.from_numpy(local_scaler.transform(np.array([[age,salary]]))).float())[:,0]
+    prediction = new_predictor2(torch.from_numpy(local_scaler.transform(np.array([[age,salary]]))).float())
 
 
-    return "The prediction from GCP API is {}".format(prediction)
+    return "Ooooboy, The prediction from GCP API is {}".format(prediction)
 
 if __name__ == "__main__":
     app.run(host= '0.0.0.0',port=8005, debug=True)
